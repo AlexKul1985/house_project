@@ -45,27 +45,37 @@
 	.next_review {
 	position: absolute;
 	top:50%;
-	right:0;
+	right:2%;
 	width: 0;
 	height: 0;
 	border-style: solid;
 	border-width: 75px 0 75px 50px;
-	border-color: transparent transparent transparent #007bff;
+	border-color: transparent transparent transparent #555;
 	transform:translateY(-50%);
-	cursor:pointer;
+	transition: border-color .7s;
+	
+	&:active, &:hover {
+	cursor:pointer;	
+	border-color: transparent  transparent transparent #007bff;
+	}
 	}
 	.prev_review {
 	position: absolute;
 	top:50%;
-	left:0;
+	left:2%;
 	width: 0;
 	height: 0;
 	border-style: solid;
 	border-width: 75px 50px 75px 0;
-	border-color: transparent #007bff transparent transparent;
+	border-color: transparent #555 transparent transparent;
+	transition: border-color .7s;
 	
 	transform:translateY(-50%);
-	cursor:pointer;
+	
+	&:active, &:hover {
+	cursor:pointer;	
+	border-color: transparent #007bff transparent transparent;
+	}
 	}
 	}
 }

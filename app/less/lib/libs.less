@@ -2574,6 +2574,11 @@
   margin: 0 5px;
   padding: 0;
   cursor: pointer;
+  background: #0e6594;
+  border-radius:50%;
+  &.slick-active {
+   background: #555; 
+  }
 }
 
 .slick-dots li button {
@@ -2588,6 +2593,7 @@
   border: 0;
   outline: none;
   background: transparent;
+
 }
 
 .slick-dots li button:hover,
@@ -2620,6 +2626,8 @@
 .slick-dots li.slick-active button:before {
   opacity: .75;
   color: black;
+  // background: black;
+  // border-radius: 50%;
 }
 
 /*!

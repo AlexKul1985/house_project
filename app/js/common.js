@@ -41,10 +41,11 @@ $('.block-photo')
 
             $('.reviews_list').slick({
                autoplay: true,
-                autoplaySpeed: 2000,
+                autoplaySpeed: 5000,
                 nextArrow:'.next_review',
                 prevArrow:'.prev_review',
                 dots: true,
+                speed: 1000,
                 infinite: false,
                 responsive: [
                         {
