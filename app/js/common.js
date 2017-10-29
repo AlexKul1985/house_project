@@ -635,7 +635,26 @@ id_h1 = setTimeout(function(){
 console.log('Остановка!');
 },200);
 });
+var show_review = $('.show_review');
+var b_rev = $('body');
+var img_rev;
+var hidden_bg_rew= $('.hidden_bg_plan');
+      show_review.each(function(i){
 
-        
+        $(this).on('click',function(){
+
+            hidden_bg_rew.fadeIn(400);
+            img_rev = $('<img src ="img/rewiews/' + (i+1) +'.png" class="img_review" alt="Отзыв № '+(i+1)+'"/>');
+           img_rev.appendTo(b_rev);
+           img_rev.fadeIn(400);
+        })
+      });  
+      hidden_bg_rew.on('click',function(){
+        $(this).fadeOut(400);
+        img_rev.fadeOut(400,function(){
+           img_rev.remove(); 
+        });
+      });
+
 });
 
