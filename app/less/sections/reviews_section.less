@@ -1,10 +1,9 @@
-@inter:'under';
-@disp:'inline';
+
 .rewiews_section{
 	margin-bottom: 90px;
 	.reviews {
 		width: 100%;
-		min-height: 400px;
+		height:auto;
 		position: relative;
 		border: 5px solid #0e6594;
 		-webkit-box-sizing: border-box;
@@ -16,21 +15,25 @@
 		border-radius: 50px; 
 		.reviews_list {
 			list-style:none;
+			
+			min-height: 200px;
 			li {
 				text-align: center;
+				height:100%;
+				cursor: pointer;
 				
 				span {
 					display: inline-block;
 					width:100%;
 					margin-top: 60px;
-					 font-family: russo_oneregular, sans-serif;
+					font-family: russo_oneregular, sans-serif;
 			  		color: #555;
 			  		font-size: 1.2rem;
 				}
 				a {
 					display: inline-block;
 					margin-top:30px;
-					 font-family: russo_oneregular, sans-serif;
+					font-family: russo_oneregular, sans-serif;
 			  		color: #555;
 			  		&:hover {
 			  			text-decoration: underline;
@@ -39,5 +42,30 @@
 
 			}
 		}
+	.next_review {
+	position: absolute;
+	top:50%;
+	right:0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 75px 0 75px 50px;
+	border-color: transparent transparent transparent #007bff;
+	transform:translateY(-50%);
+	cursor:pointer;
+	}
+	.prev_review {
+	position: absolute;
+	top:50%;
+	left:0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 75px 50px 75px 0;
+	border-color: transparent #007bff transparent transparent;
+	
+	transform:translateY(-50%);
+	cursor:pointer;
+	}
 	}
 }

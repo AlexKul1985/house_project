@@ -38,11 +38,35 @@ $('.block-photo')
                             
                           ]
             });
+
             $('.reviews_list').slick({
-               infinite: false,
-                slidesToShow: 1,
-                draggable:false,
-              variableWidth: false 
+               autoplay: true,
+                autoplaySpeed: 2000,
+                nextArrow:'.next_review',
+                prevArrow:'.prev_review',
+                dots: true,
+                infinite: false,
+                responsive: [
+                        {
+                          breakpoint: 768,
+                          settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 1
+                          }
+                        },
+                        {
+                          breakpoint: 480,
+                          settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 1
+                          }
+                        }
+                    ]
+
             });
     
 $('html,body').css({
