@@ -348,7 +348,7 @@ body .right_move {
   height:3px;
   width:0;
   background:#0e6594;
-  transition: width .3s;
+  transition: width .3s ease-out;
 
 }
 
@@ -361,10 +361,10 @@ body .right_move {
   width:0;
   height:3px;
   background:#0e6594;
-   transition: width .3s;
+   transition: width .3s ease-out;
 }
-.block_menu .menu_item:hover .menu_item__link::before,
-.block_menu .menu_item:hover .menu_item__link::after
+.block_menu .menu_item .menu_item__link:hover::before,
+.block_menu .menu_item .menu_item__link:hover::after
 {
   width:50%;
 }
