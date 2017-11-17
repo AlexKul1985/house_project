@@ -77,6 +77,7 @@ $('#Capa_1').fadeIn(4000);
    
 var  thisScroll;
 
+
 var svg = new Walkway({
                   selector: '#Capa_1',
                   duration: '4000',
@@ -186,8 +187,11 @@ elem.on('click',function(){
         
 });
 
-$(window).on('scroll',function(){
 
+var start_scroll=false;
+
+$(window).on('scroll',function(){
+start_scroll=true;
     
 
     elem_up.css({
@@ -592,11 +596,39 @@ function deleteSpanInString(str){
             $('<span>'+text[t1]+'</span>').appendTo(h2);
         }
     }
+    ////////////////////////////
+function getPositionElemXY(span_item){
+    var position = span_item.css('transform');
 
+    return position.match(/matrix\(\d+, ?\d+, ?\d+, ?\d+, ?(\d+)/)[1];
+
+}
+/////////////////////////////////
+
+
+function startScroll(bool_start,collection_span){
+    if(!bool_start) return;
+    var transform_val = [];
+    var collection_span_length = collection_span.length;
+    while(1){
+       for(var i=0;i<collection_span.length;i++){
+            if(collection_span[i].x == 0 && collection_span[i].y==0) transform_val.push(collection_span[i]);
+       } 
+       if(transform_val.length === collection_span_length) break;
+       else transform_val = [];
+       
+    }
+    return false;
+
+}
+////////////////////////////////////////
 
 
     var elem_text = $('h1.lozung span');
-
+    //var elem_text11 = $('h1.lozung');
+   // for(var y =0; y<elem_text.length;y++){
+        // console.log(elem_text11.css('transform').match(/matrix\(\d+, ?\d+, ?\d+, ?\d+, ?(\d+)/)[1]);
+    //}
 
 for(var k1=0; k1<new_arr.length; k1++) {
     elem_text.eq(k1).css({
@@ -616,13 +648,13 @@ elem_text.css({
     new_titles.animate({
         opacity:'1'
     },3000);
-    setTimeout(function(){
-        var str_no_span = deleteSpanInString(new_titles.html());
-        new_titles.empty();
-        new_titles.html(str_no_span);
-        console.log(deleteSpanInString(new_titles.html()));
+    // setTimeout(function(){
+    //     var str_no_span = deleteSpanInString(new_titles.html());
+    //     new_titles.empty();
+    //     new_titles.html(str_no_span);
+    //     console.log(deleteSpanInString(new_titles.html()));
 
-        },4500);
+    //     },4500);
     
 },1000);
 
