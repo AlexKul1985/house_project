@@ -333,10 +333,40 @@ body .right_move {
 }
 
 .block_menu .menu_item__link {
+  position:relative;
   color: #222;
   font-size: 1.2rem;
   font-family: playbold, sans-serif;
   font-weight: bold;
+}
+.block_menu .menu_item__link::before{
+  content:"";
+  display:block;
+  position:absolute;
+  bottom:-5px;
+  left:50%;
+  height:3px;
+  width:0;
+  background:#0e6594;
+  transition: width .3s;
+
+}
+
+.block_menu .menu_item__link::after{
+   content:"";
+  display:block;
+  position:absolute;
+  bottom:-5px;
+  right:50%;
+  width:0;
+  height:3px;
+  background:#0e6594;
+   transition: width .3s;
+}
+.block_menu .menu_item:hover .menu_item__link::before,
+.block_menu .menu_item:hover .menu_item__link::after
+{
+  width:50%;
 }
 
 .video_menu {

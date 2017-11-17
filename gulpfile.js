@@ -14,8 +14,8 @@ var gulp           = require('gulp'),
 		fileinclude    = require('gulp-file-include'),
 		gulpRemoveHtml = require('gulp-remove-html'),
 		ftp            = require('vinyl-ftp'),
-		notify         = require("gulp-notify"),
-		rigger         = require("gulp-rigger");
+		notify         = require("gulp-notify");
+		
 		
 
 gulp.task('browser-sync', function() {
