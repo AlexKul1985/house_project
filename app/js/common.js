@@ -555,31 +555,47 @@ var text = titles.html();
 var new_arr = generateArrRandObjects(text,randNumberForDef1);
 var new_arr_pre_and = generateArrRandObjects(text,randNumberForDef2);
 
-console.log(new_arr);
+// console.log(new_arr);
 
+function deleteSpanInString(str){
+            var sym_space_length = '&nbsp;'.length;
+            var new_str ='';
+            var search_str = '</span>';
+            var start_position = 0;
+            var length_span = search_str.length;
+            var search_position=null;
+            for(var i=0;i<str.length;i++){
+                search_position = str.indexOf('</span>',start_position) ;
+                if(search_position == -1) break;
+                start_position = search_position+1;
+                if(str[search_position-sym_space_length] !=='&') new_str +=str[search_position-1];
+                else new_str +=' ';
 
+            }
+            return new_str;
+        }
 
 
 
     
     titles.remove();
-    console.log(text);
+    // console.log(text);
     var b = $('.wrap_lozung');
     var h2 = $('<h1 class="lozung"></h1>');
     h2.prependTo(b);
     for(var t1=0; t1<text.length; t1++) {
         if(text[t1] === " ") {
-        $('<span class="two_elem">&nbsp;</span>').appendTo(h2);
+        $('<span>&nbsp;</span>').appendTo(h2);
             
         }
         else {
-            $('<span class="two_elem">'+text[t1]+'</span>').appendTo(h2);
+            $('<span>'+text[t1]+'</span>').appendTo(h2);
         }
     }
 
 
 
-    var elem_text = $('h1.lozung span.two_elem');
+    var elem_text = $('h1.lozung span');
 
 
 for(var k1=0; k1<new_arr.length; k1++) {
@@ -590,16 +606,23 @@ transform:'translate('+parseInt(new_arr[k1].x)+'px,'+parseInt(new_arr[k1].y) +'p
 });
 }
 var new_titles = $('.lozung');
+
 setTimeout(function(){
 elem_text.css({
     transform:"translate(0,0) rotate(0deg)",
     opacity:'1'
-    
 });
+    
     new_titles.animate({
         opacity:'1'
-    },3000)
-    
+    },3000);
+    setTimeout(function(){
+        var str_no_span = deleteSpanInString(new_titles.html());
+        new_titles.empty();
+        new_titles.html(str_no_span);
+        console.log(deleteSpanInString(new_titles.html()));
+
+        },4500);
     
 },1000);
 
