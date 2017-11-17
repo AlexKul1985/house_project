@@ -565,7 +565,7 @@ function deleteSpanInString(str){
             var length_span = search_str.length;
             var search_position=null;
             for(var i=0;i<str.length;i++){
-                search_position = str.indexOf('</span>',start_position) ;
+                search_position = str.indexOf(search_str,start_position) ;
                 if(search_position == -1) break;
                 start_position = search_position+1;
                 if(str[search_position-sym_space_length] !=='&') new_str +=str[search_position-1];

@@ -1,13 +1,10 @@
 {
-  "name": "optimizedhtml",
+  "name": "house_project",
   "version": "1.0.0",
-  "description": "OptimizedHTML - Start HTML Template",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "WebDesign Master",
-  "license": "ISC",
+  "repository": "https://github.com/AlexKul1985/house_project.git",
+  "author": "Alex <milan.url@mail.ru>",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.18.5",
     "del": "^2.2.2",
