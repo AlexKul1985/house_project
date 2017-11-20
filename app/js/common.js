@@ -18,13 +18,23 @@ $('.block-photo')
                                 
                               }
                             },
+                            {
+                              breakpoint:785,
+                              settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                                variableWidth: false,
+                                 dots: true
+                              }
+                            },
                            
                              {
                               breakpoint: 600,
                               settings: {
                                 slidesToShow: 2,
                                 slidesToScroll: 1,
-                                variableWidth: false
+                                variableWidth: false,
+                                dots: true
                               }
                             },
                             {
@@ -32,7 +42,8 @@ $('.block-photo')
                               settings: {
                                 slidesToShow: 1,
                                 slidesToScroll: 1,
-                                variableWidth: false
+                                variableWidth: false,
+                                dots: true
                               }
                             }
                             
