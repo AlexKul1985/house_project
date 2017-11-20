@@ -93,6 +93,8 @@ var svg = new Walkway({
    
      if($(this).scrollTop() > 0) {
              $('.top_header').fadeOut(400);
+             $('#btn_menu').fadeOut(400);
+             $('.phone-link').fadeOut(400);
          }
          
     
@@ -125,6 +127,8 @@ function stopScroll() {
                 });
                 svg.draw();  
              });
+             $('#btn_menu').fadeIn(400);
+             $('.phone-link').fadeIn(400);
     },400);
        
     }
@@ -633,9 +637,9 @@ function startScroll(bool_start,collection_span){
 for(var k1=0; k1<new_arr.length; k1++) {
     elem_text.eq(k1).css({
 transform:'translate('+parseInt(new_arr[k1].x)+'px,'+parseInt(new_arr[k1].y) +'px) rotate('+func()+'175deg)'
-
-
 });
+
+
 }
 var new_titles = $('.lozung');
 
