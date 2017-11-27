@@ -725,6 +725,19 @@ var hidden_bg_rew= $('.hidden_bg_plan');
            img_rev.remove(); 
         });
       });
+      var loader_bg =  $('.loader_bg');
+      loader_bg.css({
+        opacity: 0
+      });
+      setTimeout(function(){
+            $('.loader .sub_loader .sub_loader_top,.loader .sub_loader .sub_loader_bottom ').css({
+            animationPlayState: 'paused'
+            });
+            loader_bg.css({
+                display:'none'
+            });
+        },1000);
+      
 
 });
 

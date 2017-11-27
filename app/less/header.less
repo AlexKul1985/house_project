@@ -1,4 +1,83 @@
 @import "lib/smart-grid.less";
+.loader_bg{
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background: #fff;
+  z-index: 1000;
+  opacity: 1;
+  transition:opacity .5s;
+  .loader {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:200px;
+    height: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+    border-radius:50%;
+    border: 5px solid #0080ff;
+   
+    .sub_loader{
+      position: absolute;
+      top:50%;
+      left:50%;
+      width:190px;
+      height: 190px;
+      margin-top:-95px;
+      margin-left: -95px;
+      background: lightblue;
+      box-shadow: 0 0 0 5phex rgba(255,255,255,0);
+      border-radius: 50%;
+      .sub_loader_top{
+        
+        position: absolute;
+        top:-35%;
+        left: 0;
+        background: rgba(255,255,255,0.3);
+        width:100%;
+        height: 100%;
+        border-radius:42%;
+        animation: anim2 5s infinite alternate;
+      }
+      .sub_loader_bottom{
+        
+        position: absolute;
+        top:-45%;
+        left: 0;
+        background: rgba(255,255,255,1);
+        width:100%;
+        height: 100%;
+        border-radius:47%;
+        animation: anim2 5s infinite;
+
+      }
+
+    }
+  }
+}
+
+@keyframes anim1 {
+  0% {
+   transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes anim2 {
+  0% {
+   transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
 .header .top_header {
   position: fixed;
   z-index: 105;
